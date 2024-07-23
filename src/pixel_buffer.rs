@@ -467,6 +467,11 @@ impl CVPixelBuffer {
     }
 
     #[inline]
+    pub fn get_data_size(&self) -> usize {
+        unsafe { CVPixelBufferGetDataSize(self.as_concrete_TypeRef()) }
+    }
+
+    #[inline]
     pub fn get_width(&self) -> usize {
         unsafe { CVPixelBufferGetWidth(self.as_concrete_TypeRef()) }
     }
